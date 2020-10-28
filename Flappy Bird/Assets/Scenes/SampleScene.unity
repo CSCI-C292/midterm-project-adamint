@@ -2353,6 +2353,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -0.181
       objectReference: {fileID: 0}
+    - target: {fileID: 8586878558839196656, guid: 45c08aca16d1641eca86198956589ded, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586878558839196656, guid: 45c08aca16d1641eca86198956589ded, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586878558839196656, guid: 45c08aca16d1641eca86198956589ded, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c08aca16d1641eca86198956589ded, type: 3}
 --- !u!1 &4316418401796052202 stripped
@@ -2409,3 +2421,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 780a28b5dbe5c4918b4e21ea866f0e90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyCode: 0
+  _asteroidDaemon: {fileID: 0}

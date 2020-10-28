@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AsteroidDaemon : MonoBehaviour
 {
-    [SerializeField] GameObject _asteroidStopText;
+    [SerializeField] public GameObject _asteroidStopText;
     [SerializeField] GameObject _asteroidPrefab;
-    [SerializeField] GameObject _flappyBird;
+    [SerializeField] public GameObject _flappyBird;
 
-    private GameObject currentAsteroid;
-    private int currentKey;
+    [SerializeField] GameObject _asteroidNumberText;
+
+    private List<GameObject> asteroids = new List<GameObject>();
 
     private System.Random random = new System.Random();
 
@@ -21,8 +23,8 @@ public class AsteroidDaemon : MonoBehaviour
     }
 
     void AsteroidInit() {
-        if (currentAsteroid == null) {
-            if (random.Next(10) == 0) {
+        if (asteroids.Count < 3 && GameState.isGameInProgress) {
+            if (random.Next(5) == 0) {
                 SpawnAsteroid();
              }
         }
@@ -31,11 +33,26 @@ public class AsteroidDaemon : MonoBehaviour
     void SpawnAsteroid() {
         Vector3 birdPosition = _flappyBird.transform.position;
 
-        Vector3 position = new Vector3(birdPosition.x - 10, birdPosition.y - 3, 0.5f);
-        currentAsteroid = Instantiate(_asteroidPrefab, position, Quaternion.identity);
-    
-        currentKey = random.Next(97, 122);
+        Vector3 position = new Vector3(birdPosition.x - 3.2f, birdPosition.y - 3, 0.5f);
+        GameObject asteroidGo = Instantiate(_asteroidPrefab, position, Quaternion.identity);
+        asteroids.Add(asteroidGo);
+        _asteroidNumberText.GetComponent<Text>().text = "Asteroids: " + asteroids.Count; 
+        Asteroid asteroid = asteroidGo.GetComponent<Asteroid>();
+        asteroid.keyCode = (KeyCode) random.Next(97, 122);
+        asteroid._asteroidDaemon = this;
+    }
 
-        
+    public void RemoveAsteroid(Asteroid asteroid) {
+        if (asteroid.gameObject != null) {
+            asteroids.Remove(asteroid.gameObject);
+            Destroy(asteroid.gameObject);
+            _asteroidNumberText.GetComponent<Text>().text = "Asteroids: " + asteroids.Count;
+            if (asteroids.Count == 0) {
+                _asteroidStopText.SetActive(false);
+            } else {
+                Asteroid first = asteroids[0].GetComponent<Asteroid>();
+                _asteroidStopText.GetComponent<Text>().text = "HIT " + first.keyCode.ToString() + " TO STOP ASTEROID";
+            }
+        }
     }
 }

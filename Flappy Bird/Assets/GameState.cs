@@ -122,6 +122,7 @@ public class GameState : MonoBehaviour
         isGameInProgress = false;
         isGameStarted = false;
         PipeDaemon.pipeXStart = 10;
+        PipeDaemon.pipePassingLocations.Clear();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

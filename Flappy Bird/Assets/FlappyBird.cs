@@ -71,7 +71,9 @@ public class FlappyBird : MonoBehaviour
     }
 
    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.name.Contains("BottomBar") || other.gameObject.name.Contains("Pipe")) {
+        if (other.gameObject.name.Contains("BottomBar") 
+        || other.gameObject.name.Contains("Pipe") 
+        || other.gameObject.name.Contains("Asteroid")) {
             GameState.setGameOver();
         }
     }
