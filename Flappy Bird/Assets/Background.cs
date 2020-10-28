@@ -14,7 +14,7 @@ public class Background : MonoBehaviour
     void Update()
     {
         if (!GameState.isGameOver()) {
-            transform.position += Vector3.right * Time.deltaTime * MainCamera._moveSpeed;
+            transform.position += Vector3.right * Time.deltaTime * MainCamera.getMoveSpeed();
         }
     }
 }

@@ -36,6 +36,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\PipeDaemon.cs" />
      <Compile Include="Assets\GameState.cs" />
      <Compile Include="Assets\Background.cs" />
      <Compile Include="Assets\MainCamera.cs" />
@@ -43,7 +44,11 @@
      <Compile Include="Assets\BottomBarDaemon.cs" />
      <Compile Include="Assets\RestartButton.cs" />
      <Compile Include="Assets\Score.cs" />
-     <Compile Include="Assets\PipeDaemon.cs" />
+     <Compile Include="Assets\BackgroundDaemon.cs" />
+     <Compile Include="Assets\AsteroidDaemon.cs" />
+     <Compile Include="Assets\Asteroid.cs" />
+     <None Include="Assets\spaceshooter (1)\Spritesheet\sheet.xml" />
+     <None Include="Assets\spaceshooter (1)\license.txt" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.1.4f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

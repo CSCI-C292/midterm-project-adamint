@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class MainCamera : MonoBehaviour
 {
-    public static float _moveSpeed = 3f;
+    private static float _moveSpeed = 3f;
+
+    public static float getMoveSpeed() {
+        return _moveSpeed * GameState.gameState.speedMultiplier;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -16,7 +20,7 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         if (!GameState.isGameOver()) {
-            transform.position += Vector3.right * Time.deltaTime * _moveSpeed;
+            transform.position += Vector3.right * Time.deltaTime * getMoveSpeed();
         }
     }
 }

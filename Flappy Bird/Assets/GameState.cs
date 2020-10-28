@@ -9,6 +9,8 @@ public class GameState : MonoBehaviour
     public static bool isGameInProgress = false;
     public static bool isGameStarted = false;
 
+    public float speedMultiplier = 1.0f;
+
     public static int score;
 
     [SerializeField] GameObject _hundredsScoreObject;
@@ -119,6 +121,7 @@ public class GameState : MonoBehaviour
         score = 0;
         isGameInProgress = false;
         isGameStarted = false;
+        PipeDaemon.pipeXStart = 10;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

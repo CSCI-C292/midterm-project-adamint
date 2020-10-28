@@ -11,7 +11,7 @@ public class BottomBarDaemon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnBottomBar", 0, 0.5f);
+        InvokeRepeating("SpawnBottomBar", 0, 0.1f);
     }
 
     void SpawnBottomBar() {
