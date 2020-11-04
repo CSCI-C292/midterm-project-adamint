@@ -66,7 +66,6 @@ public class FlappyBird : MonoBehaviour
             PipeDaemon.pipePassingLocations.RemoveAt(0);
             GameState.gameState.setScore(GameState.score + 1);
         }
-        
 
     }
 
