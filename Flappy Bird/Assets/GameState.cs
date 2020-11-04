@@ -183,6 +183,7 @@ public class GameState : MonoBehaviour
         isGameStarted = false;
         PipeDaemon.pipeXStart = 10;
         PipeDaemon.pipePassingLocations.Clear();
+        gameState.speedMultiplier = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
