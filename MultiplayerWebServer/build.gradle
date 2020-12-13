@@ -1,0 +1,21 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.21'
+    id 'application'
+}
+
+group 'com.adamratzman'
+version '1.0-SNAPSHOT'
+
+mainClassName = "com.adamratzman.WebServerKt"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'com.sparkjava:spark-core:2.9.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+}
+
+application {
+}
